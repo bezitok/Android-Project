@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TabHost</string>
+    <string name="parsed_data">http://android.vn\nHướng dẫn bởi thanhlong90.it</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_hinh_anh">HinhAnhActivity</string>
+    <string name="hinhanh">Chưa có hình ảnh nào trong tab này!</string>
+    <string name="title_activity_bai_hat">BaiHatActivity</string>
+    <string name="nghenhac">Chưa có bài nào trong tab này!</string>
+    <string name="title_activity_phim_anh">PhimAnhActivity</string>
+    <string name="xemphim">Chưa có video nào trong tab này!</string>
+</resources>
