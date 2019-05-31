@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RelativeLayout</string>
+    <string name="done" />
+    <string name="reminder" />
+    <string name="testview1">Xin chao cac ban</string>
+    <string name="testview2">Xin chao cac ban part 2</string>
+    <string name="testview3">Xin chào các bạn part 3</string>
+</resources>

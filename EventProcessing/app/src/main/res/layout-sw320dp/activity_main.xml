@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        android:layout_gravity="center"
+        android:text="@string/accountname"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_medium"
+        />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        android:gravity="center_vertical"
+        android:hint="@string/texthint"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView" 
+        android:gravity="center_vertical"
+        android:text="@string/password"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_medium"
+        />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView" 
+        android:gravity="center_vertical"
+        android:hint="***********************"
+        android:inputType="textPassword"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        android:gravity="center_vertical"
+        android:text="@string/passwordagain"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_medium"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        android:gravity="center_vertical"
+        android:hint="***********************"
+        android:inputType="textPassword"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/showpassword"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        android:gravity="center_vertical"
+        android:text="@string/country"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textsize_medium"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        />
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/condition"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightTextView"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/signin"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

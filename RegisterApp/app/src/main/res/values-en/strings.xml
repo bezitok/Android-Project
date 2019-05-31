@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Register App</string>
+    <string name="header">Register Account</string>
+    <string name="user">Input Username</string>
+    <string name="pass">Input Password</string>
+    <string name="passagain">Input password again</string>
+    <string name="policy">I agree with all policy</string>
+    <string name="register">Register</string>
+</resources>

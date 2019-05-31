@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Order Food</string>
+    <string name="login">Đăng nhập</string>
+    <string name="signIn">Đăng ký</string>
+    <string name="userLoginHint">Tên đăng nhập</string>
+    <string name="userPasswordHint">Mật khẩu</string>
+    <string name="radioButtonMale">Nam</string>
+    <string name="radioButtonFemale">Nữ</string>
+    <string name="userDateOfBirthHint">Ngày sinh</string>
+    <string name="userIDCardHint">CMND</string>
+    <string name="buttonLoginConfirm">Đăng nhập</string>
+    <string name="buttonSignInConfirm">Đăng ký</string>
+    <string name="buttonCancel">Thoát</string>
+    <string name="authorize">Developed by Hai Nguyen</string>
+    <string name="createANewAccount">Chưa có tài khoản? <u>Đăng ký ngay</u></string>
+</resources>

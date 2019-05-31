@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">EventProcessing</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="lab1">Bài thực hành 1</string>
+    <string name="lab2">Bài thực hành 2</string>
+    <string name="title_activity_lab1">Lab 1</string>
+    <string name="accountname">Tài khoản</string>
+    <string name="texthint">jimmyaguirre@my.smccd.edu</string>
+    <string name="password">Mật khẩu</string>
+    <string name="passwordagain">Nhập lại mật khẩu</string>
+    <string name="showpassword">Hiển thị mật khẩu</string>
+    <string name="country">Quốc gia</string>
+    <string name="cancel">Thoát</string>
+    <string name="signin">Đăng ký</string>
+    <string name="condition">Tôi đồng ý</string>
+</resources>

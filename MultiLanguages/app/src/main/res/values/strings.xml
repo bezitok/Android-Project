@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multi Languages</string>
+    <string name="header">Ứng dụng đa ngôn ngữ đầu tiên của tôi</string>
+    <string name="user">Tên người dùng</string>
+    <string name="password">Mật khẩu</string>
+    <string name="button">Nhấn</string>
+</resources>

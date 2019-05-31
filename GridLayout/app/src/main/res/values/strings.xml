@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GridLayout</string>
+    <string name="text1">Cột 1 dòng 1</string>
+    <string name="text2">Cột 2 dòng 1</string>
+    <string name="text3">Cột 3 dòng 1</string>
+    <string name="text4">Cột 4 dòng 1</string>
+    <string name="text5">Cột 5 dòng 1</string>
+</resources>

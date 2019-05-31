@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Radio Button</string>
+    <string name="header">Đăng kí tài khoản</string>
+    <string name="user">Nhập tên tài khoản</string>
+    <string name="pass">Nhập mật khẩu</string>
+    <string name="passagain">Nhập lại mật khẩu</string>
+    <string name="policy">Tôi đã đọc và đồng ý với các điều khoản</string>
+    <string name="register">Đăng ký</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Multi Languages</string>
+    <string name="header">My first multi language app</string>
+    <string name="user">User name</string>
+    <string name="password">Password</string>
+    <string name="button">Press</string>
+</resources>
