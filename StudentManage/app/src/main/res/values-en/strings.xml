@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Student Management</string>
+    <string name="welcome">Welcome to Student Information Management Application</string>
+    <string name="MainActivityContext">Press Continue to go to next screen, press Exit to quit application</string>
+    <string name="buttonContent1">Continue</string>
+    <string name="buttonContent2">Exit</string>
+    <string name="secondActivityTextView1">Input Student Name:</string>
+    <string name="secondActivityTextView2">Input Student Age:</string>
+    <string name="secondActivityTextView3">Input Student Address:</string>
+    <string name="secondActivityHint1">Input name into here</string>
+    <string name="secondActivityHint2">Input age into here</string>
+    <string name="secondActivityHint3">Input address into here</string>
+    <string name="secondActivityButton1">Add</string>
+    <string name="secondActivityButton2">Show All Information</string>
+    <string name="thirdActivityTextView">All Student Information</string>
+    <string name="contextMenuItem1">Edit</string>
+    <string name="contextMenuItem2">Delete</string>
+</resources>

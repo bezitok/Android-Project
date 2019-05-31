@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="tao đẹp chai"
+        android:textSize="18sp"
+        android:textColor="#fbf243"
+        android:background="#FF43BFFB"
+        android:layout_margin="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="tao đẹp chai"
+        android:textSize="18sp"
+        android:textColor="#fbf243"
+        android:background="#df43fb"
+        android:layout_marginBottom="5dp"
+        android:paddingTop="6dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="tao đẹp chai"
+        android:textSize="18sp"
+        android:textColor="#fbf243"
+        android:background="#4f43fb"
+        />
+</LinearLayout>

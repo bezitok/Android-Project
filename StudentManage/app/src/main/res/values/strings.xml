@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Student Manage</string>
+    <string name="welcome">Chào mừng đến với ứng dụng quản lý thông tin sinh viên</string>
+    <string name="MainActivityContext">Nhấn Tiếp tục để chuyển qua màn hình tiếp theo, nhấn Thoát để thoát ứng dụng</string>
+    <string name="buttonContent1">Tiếp tục</string>
+    <string name="buttonContent2">Thoát</string>
+    <string name="secondActivityTextView1">Nhập tên sinh viên:</string>
+    <string name="secondActivityTextView2">Nhập tuổi sinh viên:</string>
+    <string name="secondActivityTextView3">Nhập quê quán sinh viên:</string>
+    <string name="secondActivityHint1">Nhập tên vào đây</string>
+    <string name="secondActivityHint2">Nhập tuổi vào đây</string>
+    <string name="secondActivityHint3">Nhập quê quán vào đây</string>
+    <string name="secondActivityButton1">Thêm</string>
+    <string name="secondActivityButton2">Hiển thị danh sách</string>
+    <string name="thirdActivityTextView">Toàn bộ danh sách thông tin sinh viên</string>
+    <string name="contextMenuItem1">Chỉnh sửa</string>
+    <string name="contextMenuItem2">Xóa</string>
+</resources>
