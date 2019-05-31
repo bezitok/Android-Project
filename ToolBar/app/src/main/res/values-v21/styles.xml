@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Custom_ToolBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">#00BCD4</item>
+        <item name="android:colorPrimaryDark">#FF6F00</item>
+        <item name="android:textColorPrimary">#01579B</item>
+        <item name="android:navigationBarColor">#4CAF50</item>
+    </style>
+
+</resources>

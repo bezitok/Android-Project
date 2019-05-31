@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TableLayout</string>
+    <string name="textview1">Đẹp chai có gì sai</string>
+    <string name="desc">Android.png</string>
+</resources>
