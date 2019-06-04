@@ -39,7 +39,7 @@ public class Show_All_Contact_Information extends AppCompatActivity {
 
         Context context;
         int resource;
-        List<Contact> contactArrayList = new ArrayList<>();
+        List<Contact> contactArrayList ;
 
         public CustomAdapter(Context context, int resource, List<Contact> objects) {
             super(context, resource, objects);

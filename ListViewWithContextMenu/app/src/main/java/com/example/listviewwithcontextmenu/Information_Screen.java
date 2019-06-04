@@ -71,7 +71,7 @@ public class Information_Screen extends AppCompatActivity {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
 
-            Student student = studentList.get(position);
+            Student student = list.get(position);
             viewHolder.studentImage.setImageResource(student.getStudentImage());
             viewHolder.studentName.setText(student.getName());
             viewHolder.studentPhoneNumber.setText(String.valueOf(student.getPhone()));
