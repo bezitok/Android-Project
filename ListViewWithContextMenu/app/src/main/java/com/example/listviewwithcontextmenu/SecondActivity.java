@@ -1,9 +1,11 @@
 package com.example.listviewwithcontextmenu;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,13 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SecondActivity extends AppCompatActivity {
 
     EditText editText1, editText2, editText3;
     Button button1, button2, button3;
-    List<Student> studentList;
+    ArrayList<Student> studentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +38,21 @@ public class SecondActivity extends AppCompatActivity {
 
 
     public void ConfirmStudent(View view) {
+        Student student = new Student();
+        student.setStudentImage(R.drawable.baseline_account_circle_black_36);
+        student.setName(editText1.getText().toString());
+        student.setPhone(Integer.parseInt(editText2.getText().toString()));
+        student.setAddress(editText3.getText().toString());
+        studentList.add(student);
+        Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_LONG).show();
     }
 
     public void ShowAllStudent(View view) {
+        Intent intent = new Intent(SecondActivity.this, Information_Screen.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("student List", studentList);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     public void Exit(View view) {

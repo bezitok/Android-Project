@@ -1,9 +1,11 @@
 package com.example.listviewwithcontextmenu;
 
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Student implements Parcelable {
+    private int studentImage;
     private String name;
     private double phone;
     private String address;
@@ -11,29 +13,20 @@ public class Student implements Parcelable {
     public Student() {
     }
 
-    public Student(String name, double phone, String address) {
+    public Student(int studentImage, String name, double phone, String address) {
+        this.studentImage = studentImage;
         this.name = name;
         this.phone = phone;
         this.address = address;
     }
 
-    protected Student(Parcel in) {
-        name = in.readString();
-        phone = in.readDouble();
-        address = in.readString();
+    public int getStudentImage() {
+        return studentImage;
     }
 
-    public static final Creator<Student> CREATOR = new Creator<Student>() {
-        @Override
-        public Student createFromParcel(Parcel in) {
-            return new Student(in);
-        }
-
-        @Override
-        public Student[] newArray(int size) {
-            return new Student[size];
-        }
-    };
+    public void setStudentImage(int studentImage) {
+        this.studentImage = studentImage;
+    }
 
     public String getName() {
         return name;
@@ -59,6 +52,25 @@ public class Student implements Parcelable {
         this.address = address;
     }
 
+    protected Student(Parcel in) {
+        studentImage = in.readInt();
+        name = in.readString();
+        phone = in.readDouble();
+        address = in.readString();
+    }
+
+    public static final Creator<Student> CREATOR = new Creator<Student>() {
+        @Override
+        public Student createFromParcel(Parcel in) {
+            return new Student(in);
+        }
+
+        @Override
+        public Student[] newArray(int size) {
+            return new Student[size];
+        }
+    };
+
     @Override
     public int describeContents() {
         return 0;
@@ -66,6 +78,7 @@ public class Student implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(studentImage);
         dest.writeString(name);
         dest.writeDouble(phone);
         dest.writeString(address);
