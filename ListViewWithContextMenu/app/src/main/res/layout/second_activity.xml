@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background_2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/second_screen_text1"
+        android:fontFamily="@font/baloo"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"/>
+
+    <EditText
+        android:id="@+id/editText_Name_Student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/second_screen_editText1"/>
+
+    <EditText
+        android:id="@+id/editText_Name_PhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/second_screen_editText2"
+        android:inputType="number"
+        android:maxLength="10"/>
+
+    <EditText
+        android:id="@+id/editText_Name_Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/second_screen_editText3"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/button_Confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/second_screen_button1"
+            android:onClick="ConfirmStudent"/>
+
+        <Button
+            android:id="@+id/button_ShowAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/second_screen_button3"
+            android:onClick="ShowAllStudent"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_Exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:text="@string/second_screen_button2"
+        android:onClick="Exit"/>
+</LinearLayout>

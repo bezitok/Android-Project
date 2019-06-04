@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ListView With Context Menu</string>
+    <string name="loading_screen">Đang tải...</string>
+    <string name="second_screen_text1">Vui lòng nhập thông tin học viên</string>
+    <string name="second_screen_editText1">Nhập tên học viên</string>
+    <string name="second_screen_editText2">Nhập số điện thoại</string>
+    <string name="second_screen_editText3">Quê quán</string>
+    <string name="second_screen_button1">Xác nhận</string>
+    <string name="second_screen_button2">Thoát</string>
+    <string name="second_screen_button3">Hiển thị</string>
+    <string name="information_screen_text1">Thông tin toàn bộ học viên</string>
+</resources>
