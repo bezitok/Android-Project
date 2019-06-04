@@ -1,19 +1,18 @@
 package com.example.listviewwithcontextmenu;
 
-import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Student implements Parcelable {
-    private int studentImage;
-    private String name;
-    private double phone;
-    private String address;
+    int studentImage;
+    String name;
+    long phone;
+    String address;
 
     public Student() {
     }
 
-    public Student(int studentImage, String name, double phone, String address) {
+    public Student(int studentImage, String name, long phone, String address) {
         this.studentImage = studentImage;
         this.name = name;
         this.phone = phone;
@@ -40,7 +39,7 @@ public class Student implements Parcelable {
         return phone;
     }
 
-    public void setPhone(double phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
@@ -55,7 +54,7 @@ public class Student implements Parcelable {
     protected Student(Parcel in) {
         studentImage = in.readInt();
         name = in.readString();
-        phone = in.readDouble();
+        phone = in.readLong();
         address = in.readString();
     }
 
