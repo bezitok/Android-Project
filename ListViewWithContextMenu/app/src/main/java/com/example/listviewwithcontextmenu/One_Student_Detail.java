@@ -3,16 +3,13 @@ package com.example.listviewwithcontextmenu;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class One_Student_Detail extends AppCompatActivity  {
 
-    ArrayList<Student> studentArrayList = new ArrayList<>();
+    ArrayList<Student> studentList = new ArrayList<>();
     int position;
     TextView textView1, textView2, textView3, textView4;
 
@@ -29,15 +26,12 @@ public class One_Student_Detail extends AppCompatActivity  {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        if ((studentArrayList = bundle.getParcelableArrayList("studentList")) == null){
-            Log.e("Lỗi nè", "Có lỗi");
-        }else{
-            textView1.setText("Họ tên: " + studentArrayList.get(position).getName());
-            textView2.setText("Số điện thoại: " + studentArrayList.get(position).getPhone());
-            textView3.setText("Quê quán: " + studentArrayList.get(position).getAddress());
-            textView4.setText("Trường Đại học Công Nghiệp Hà Nội");
-        }
+        studentList = bundle.getParcelableArrayList("studentList");
 
+        textView1.setText("Họ tên: " + studentList.get(position).getName());
+        textView2.setText("Số điện thoại: " + studentList.get(position).getPhone());
+        textView3.setText("Quê quán: " + studentList.get(position).getAddress());
+        textView4.setText("Trường Đại học Công nghiệp Hà Nội");
     }
 
 }

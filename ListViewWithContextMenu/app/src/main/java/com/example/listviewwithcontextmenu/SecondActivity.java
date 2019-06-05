@@ -18,6 +18,7 @@ public class SecondActivity extends AppCompatActivity {
     Button button1, button2, button3;
     ArrayList<Student> studentList = new ArrayList<>();
     ArrayList<Student> studentArrayList = new ArrayList<>();
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +49,14 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void ShowAllStudent(View view) {
-        Intent intent = new Intent(SecondActivity.this, Information_Screen.class);
-        Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList("key", studentList);
-        intent.putExtras(bundle);
-
-        Intent intent1 = new Intent();
-        Bundle bundle1 = new Bundle();
-        bundle1.putParcelableArrayList("studentList", studentArrayList);
-        intent1.putExtras(bundle1);
-
+        if(studentList.size()!=0){
+            intent = new Intent(SecondActivity.this, Information_Screen.class);
+            Bundle bundle = new Bundle();
+            bundle.putParcelableArrayList("key", studentList);
+            intent.putExtras(bundle);
+        }else{
+            intent = new Intent(SecondActivity.this, Empty_Information_Screen.class);
+        }
         startActivity(intent);
     }
 

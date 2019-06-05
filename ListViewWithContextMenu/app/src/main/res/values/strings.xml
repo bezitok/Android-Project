@@ -11,4 +11,5 @@
     <string name="information_screen_text1">Thông tin toàn bộ học viên</string>
     <string name="student_detail_information">Thông tin chi tiết học viên</string>
     <string name="detail_student_button">Quay lại</string>
+    <string name="fragment1_textView">Danh sách học viên rỗng</string>
 </resources>

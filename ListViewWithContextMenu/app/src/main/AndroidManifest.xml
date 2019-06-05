@@ -19,6 +19,7 @@
         <activity android:name=".SecondActivity" />
         <activity android:name=".Information_Screen" />
         <activity android:name=".One_Student_Detail" />
+        <activity android:name=".Empty_Information_Screen" />
     </application>
 
 </manifest>
