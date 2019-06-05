@@ -6,13 +6,13 @@ import android.os.Parcelable;
 public class Student implements Parcelable {
     int studentImage;
     String name;
-    long phone;
+    String phone;
     String address;
 
     public Student() {
     }
 
-    public Student(int studentImage, String name, long phone, String address) {
+    public Student(int studentImage, String name, String phone, String address) {
         this.studentImage = studentImage;
         this.name = name;
         this.phone = phone;
@@ -35,11 +35,11 @@ public class Student implements Parcelable {
         this.name = name;
     }
 
-    public double getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -54,7 +54,7 @@ public class Student implements Parcelable {
     protected Student(Parcel in) {
         studentImage = in.readInt();
         name = in.readString();
-        phone = in.readLong();
+        phone = in.readString();
         address = in.readString();
     }
 
@@ -79,7 +79,7 @@ public class Student implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(studentImage);
         dest.writeString(name);
-        dest.writeDouble(phone);
+        dest.writeString(phone);
         dest.writeString(address);
     }
 }

@@ -22,6 +22,8 @@
             android:text="Student"
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:fontFamily="@font/baloo"
             />
 
         <TextView
@@ -31,7 +33,10 @@
             android:layout_toRightOf="@id/student_image"
             android:text="Student"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"
+            />
 
         <TextView
             android:id="@+id/text_Student_Address"
@@ -40,7 +45,9 @@
             android:layout_toRightOf="@id/student_image"
             android:text="Student"
             android:layout_weight="1"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"/>
     </LinearLayout>
 
 

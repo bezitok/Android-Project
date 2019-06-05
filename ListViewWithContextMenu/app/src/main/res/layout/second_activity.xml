@@ -33,7 +33,7 @@
         android:layout_marginRight="20dp"
         android:hint="@string/second_screen_editText2"
         android:inputType="phone"
-        android:maxLength="10"/>
+        android:maxLength="15"/>
 
     <EditText
         android:id="@+id/editText_Name_Address"

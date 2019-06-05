@@ -17,6 +17,7 @@ public class SecondActivity extends AppCompatActivity {
     EditText editText1, editText2, editText3;
     Button button1, button2, button3;
     ArrayList<Student> studentList = new ArrayList<>();
+    ArrayList<Student> studentArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +39,11 @@ public class SecondActivity extends AppCompatActivity {
 
         student.setStudentImage(R.drawable.baseline_account_circle_black_36);
         student.setName(editText1.getText().toString());
-        student.setPhone(Long.parseLong(editText2.getText().toString()));
+        student.setPhone(editText2.getText().toString());
         student.setAddress(editText3.getText().toString());
 
         studentList.add(student);
+        studentArrayList.add(student);
         Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_LONG).show();
     }
 
@@ -50,6 +52,12 @@ public class SecondActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("key", studentList);
         intent.putExtras(bundle);
+
+        Intent intent1 = new Intent();
+        Bundle bundle1 = new Bundle();
+        bundle1.putParcelableArrayList("studentList", studentArrayList);
+        intent1.putExtras(bundle1);
+
         startActivity(intent);
     }
 

@@ -9,4 +9,6 @@
     <string name="second_screen_button2">Thoát</string>
     <string name="second_screen_button3">Hiển thị</string>
     <string name="information_screen_text1">Thông tin toàn bộ học viên</string>
+    <string name="student_detail_information">Thông tin chi tiết học viên</string>
+    <string name="detail_student_button">Quay lại</string>
 </resources>
