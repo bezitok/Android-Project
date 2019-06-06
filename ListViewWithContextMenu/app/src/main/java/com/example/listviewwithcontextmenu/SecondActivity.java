@@ -36,16 +36,18 @@ public class SecondActivity extends AppCompatActivity {
 
 
     public void ConfirmStudent(View view) {
-        Student student = new Student();
-
-        student.setStudentImage(R.drawable.baseline_account_circle_black_36);
-        student.setName(editText1.getText().toString());
-        student.setPhone(editText2.getText().toString());
-        student.setAddress(editText3.getText().toString());
-
-        studentList.add(student);
-        studentArrayList.add(student);
-        Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_LONG).show();
+        if(editText1.getText().toString().isEmpty() | editText2.getText().toString().isEmpty() | editText3.getText().toString().isEmpty()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(SecondActivity.this);
+            builder.setTitle("Warning");
+            builder.setMessage("Các trường không được bỏ trống");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+        }
     }
 
     public void ShowAllStudent(View view) {

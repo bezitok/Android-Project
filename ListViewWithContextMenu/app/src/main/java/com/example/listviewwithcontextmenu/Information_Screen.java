@@ -32,7 +32,6 @@ public class Information_Screen extends AppCompatActivity {
     ListView listView;
     CustomAdapter customAdapter;
     ArrayList<Student> studentArrayList = new ArrayList<>();
-    Fragment fragment;
     FragmentManager fragmentManager;
 
     @Override
@@ -76,7 +75,6 @@ public class Information_Screen extends AppCompatActivity {
     }
 
 
-
     public class CustomAdapter extends ArrayAdapter<Student> {
 
         Context context;
@@ -92,10 +90,10 @@ public class Information_Screen extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder viewHolder ;
+            ViewHolder viewHolder;
             View rowView = convertView;
 
-            if(rowView == null){
+            if (rowView == null) {
 
                 LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
                 rowView = inflater.inflate(R.layout.one_student_information, null);
@@ -109,7 +107,7 @@ public class Information_Screen extends AppCompatActivity {
 
                 rowView.setTag(viewHolder);
 
-            }else{
+            } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
 
@@ -140,7 +138,7 @@ public class Information_Screen extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         final int pos = menuInfo.position;
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.detail:
                 final Intent intent = new Intent(Information_Screen.this, One_Student_Detail.class);
                 Bundle bundle = new Bundle();
@@ -149,6 +147,12 @@ public class Information_Screen extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.edit:
+                Intent intent1 = new Intent(Information_Screen.this, Edit_Student_Information.class);
+                Bundle bundle1 = new Bundle();
+                Student student = studentList.get(pos);
+                bundle1.putParcelable("Student", student);
+                intent1.putExtras(bundle1);
+                startActivity(intent1);
                 break;
             case R.id.delete:
                 AlertDialog.Builder builder = new AlertDialog.Builder(Information_Screen.this);
@@ -161,7 +165,7 @@ public class Information_Screen extends AppCompatActivity {
                         studentList.remove(pos);
                         customAdapter.notifyDataSetChanged();
                         Toast.makeText(Information_Screen.this, "Xóa thành công", Toast.LENGTH_LONG).show();
-                        if(studentList.size()==0){
+                        if (studentList.size() == 0) {
                             Intent intent1 = new Intent(Information_Screen.this, Empty_Information_Screen.class);
                             startActivity(intent1);
                             finish();
@@ -182,3 +186,4 @@ public class Information_Screen extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 }
+

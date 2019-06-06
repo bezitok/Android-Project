@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/gradient_background_2"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_information_screen"
+        android:fontFamily="@font/baloo"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#000"/>
+
+    <EditText
+        android:id="@+id/editText_Edited_Student_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/second_screen_editText1"/>
+
+    <EditText
+        android:id="@+id/editText_Edited_Student_Phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/second_screen_editText2"
+        android:inputType="phone"
+        android:maxLength="15"/>
+
+    <EditText
+        android:id="@+id/editText_Edited_Student_Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/second_screen_editText3"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/button_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="@string/button_Update"
+            android:onClick="Update"/>
+
+        <Button
+            android:id="@+id/button_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/button_Cancel"
+            android:onClick="Cancel"/>
+
+    </LinearLayout>
+
+</LinearLayout>
