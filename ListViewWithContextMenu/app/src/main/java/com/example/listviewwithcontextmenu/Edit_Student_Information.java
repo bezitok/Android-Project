@@ -10,12 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class Edit_Student_Information extends AppCompatActivity {
 
     EditText editText1, editText2, editText3;
     Button button1, button2;
     Student student;
-
 
 
     @Override
@@ -46,6 +47,7 @@ public class Edit_Student_Information extends AppCompatActivity {
     }
 
     public void Cancel(View view) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(Edit_Student_Information.this);
         builder.setTitle("Alert");
         builder.setMessage("Xác nhận hủy cập nhật thông tin?");
@@ -53,13 +55,15 @@ public class Edit_Student_Information extends AppCompatActivity {
         builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(Edit_Student_Information.this, SecondActivity.class);
-                startActivity(intent);
-                finish();
+
+                Intent intent1 = new Intent(Edit_Student_Information.this, Information_Screen.class);
+                startActivity(intent1);
+
             }
         });
         builder.setPositiveButton("No", null);
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+
     }
 }

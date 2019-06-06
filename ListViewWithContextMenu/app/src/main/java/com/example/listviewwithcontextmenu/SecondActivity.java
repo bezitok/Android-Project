@@ -17,7 +17,6 @@ public class SecondActivity extends AppCompatActivity {
     EditText editText1, editText2, editText3;
     Button button1, button2, button3;
     ArrayList<Student> studentList = new ArrayList<>();
-    ArrayList<Student> studentArrayList = new ArrayList<>();
     Intent intent;
 
     @Override
@@ -36,6 +35,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
     public void ConfirmStudent(View view) {
+
         if(editText1.getText().toString().isEmpty() | editText2.getText().toString().isEmpty() | editText3.getText().toString().isEmpty()){
             AlertDialog.Builder builder = new AlertDialog.Builder(SecondActivity.this);
             builder.setTitle("Warning");
@@ -47,10 +47,25 @@ public class SecondActivity extends AppCompatActivity {
                     dialog.dismiss();
                 }
             });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }else{
+
+            Student student = new Student();
+
+            student.setStudentImage(R.drawable.baseline_account_circle_black_36);
+            student.setName(editText1.getText().toString());
+            student.setPhone(editText2.getText().toString());
+            student.setAddress(editText3.getText().toString());
+
+            studentList.add(student);
+
+            Toast.makeText(getApplicationContext(), "Thêm thành công", Toast.LENGTH_LONG).show();
         }
     }
 
     public void ShowAllStudent(View view) {
+
         if(studentList.size()!=0){
             intent = new Intent(SecondActivity.this, Information_Screen.class);
             Bundle bundle = new Bundle();
@@ -63,6 +78,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void Exit(View view) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Alert");
         builder.setMessage("Bạn chắc chắn muốn thoát chứ?");
