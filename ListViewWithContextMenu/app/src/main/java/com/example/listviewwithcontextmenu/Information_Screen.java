@@ -188,15 +188,7 @@ public class Information_Screen extends AppCompatActivity {
 
                 startActivity(intent);
                 break;
-            case R.id.edit:
 
-                Intent intent1 = new Intent(Information_Screen.this, Edit_Student_Information.class);
-                Bundle bundle1 = new Bundle();
-                Student student = studentList.get(pos);
-                bundle1.putParcelable("Student", student);
-                intent1.putExtras(bundle1);
-                startActivity(intent1);
-                break;
             case R.id.delete:
                 AlertDialog.Builder builder = new AlertDialog.Builder(Information_Screen.this);
                 builder.setTitle("Alert");

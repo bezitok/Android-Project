@@ -6,10 +6,6 @@
         />
 
     <item
-        android:id="@+id/edit"
-        android:title="Sửa"/>
-
-    <item
         android:id="@+id/delete"
         android:title="Xóa"/>
 </menu>
