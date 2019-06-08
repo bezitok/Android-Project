@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_student_textView1"
+        android:fontFamily="@font/baloo"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+
+        <EditText
+            android:id="@+id/input_student_editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="@string/input_student_editText1"
+            android:fontFamily="@font/baloo"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/input_student_editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/baloo"
+            android:inputType="number"
+            android:maxLength="12"
+            android:hint="@string/input_student_editText2"
+            />
+
+        <EditText
+            android:id="@+id/input_student_editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_student_editText2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/baloo"
+            android:focusable="false"
+            android:hint="@string/input_student_editText3"
+            android:onClick="Student_GetDOB"
+            />
+
+        <EditText
+            android:id="@+id/input_student_editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_student_editText3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/baloo"
+            android:hint="@string/input_student_editText4"
+            />
+
+        <EditText
+            android:id="@+id/input_student_editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/input_student_editText4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/baloo"
+            android:hint="@string/input_student_editText5"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linear_layout1"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/input_student_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:text="@string/input_student_button1"
+            android:fontFamily="@font/baloo"
+            android:onClick="AddStudent"/>
+
+        <Button
+            android:id="@+id/input_student_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="@string/input_student_button2"
+            android:fontFamily="@font/baloo"
+            android:onClick="ShowAllStudent"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/input_student_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_student_textView2"
+        android:layout_below="@id/linear_layout2"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"
+        android:textSize="15dp"
+        android:onClick="Exit"/>
+</RelativeLayout>

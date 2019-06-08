@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Student Manager SQLite</string>
+    <string name="context_menu_detail">Chi tiết</string>
+    <string name="context_menu_edit">Sửa</string>
+    <string name="context_menu_delete">Xóa</string>
+    <string name="activity_main_textView1">Đang tải...</string>
+    <string name="activity_main_textView2">Phát triển bởi Hai Nguyen</string>
+    <string name="input_student_textView1">Nhập thông tin học viên</string>
+    <string name="input_student_editText1">Tên học viên</string>
+    <string name="input_student_editText2">Mã học viên</string>
+    <string name="input_student_editText3">Ngày sinh</string>
+    <string name="input_student_editText4">Lớp</string>
+    <string name="input_student_editText5">Quê quán</string>
+    <string name="input_student_button1">Thêm</string>
+    <string name="input_student_button2">Hiển thị</string>
+    <string name="input_student_textView2"><u>Thoát?</u></string>
+</resources>
