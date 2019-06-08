@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Student implements Parcelable {
+    int student_ID;
     String student_Name;
     String student_Code;
     String student_DOB;
@@ -19,6 +20,23 @@ public class Student implements Parcelable {
         this.student_DOB = student_DOB;
         this.student_Class = student_Class;
         this.student_Address = student_Address;
+    }
+
+    public Student(int student_ID, String student_Name, String student_Code, String student_DOB, String student_Class, String student_Address) {
+        this.student_ID = student_ID;
+        this.student_Name = student_Name;
+        this.student_Code = student_Code;
+        this.student_DOB = student_DOB;
+        this.student_Class = student_Class;
+        this.student_Address = student_Address;
+    }
+
+    public int getStudent_ID() {
+        return student_ID;
+    }
+
+    public void setStudent_ID(int student_ID) {
+        this.student_ID = student_ID;
     }
 
     public String getStudent_Name() {
@@ -62,6 +80,7 @@ public class Student implements Parcelable {
     }
 
     protected Student(Parcel in) {
+        student_ID = in.readInt();
         student_Name = in.readString();
         student_Code = in.readString();
         student_DOB = in.readString();
@@ -88,6 +107,7 @@ public class Student implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(student_ID);
         dest.writeString(student_Name);
         dest.writeString(student_Code);
         dest.writeString(student_DOB);

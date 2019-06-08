@@ -1,10 +1,9 @@
-package com.example.studentmanagersqlite;
+package com.example.studentmanagersqlite.Activity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.studentmanagersqlite.R;
 import com.example.studentmanagersqlite.Student_DAO.Student_DAO;
-import com.example.studentmanagersqlite.Student_Database.Student_Database;
 
 import com.example.studentmanagersqlite.Student_DTO.Student;
 
@@ -40,8 +39,12 @@ public class Input_Student_Information_Screen extends AppCompatActivity {
         editText4 = findViewById(R.id.input_student_editText4);
         editText5 = findViewById(R.id.input_student_editText5);
 
+
+
         student_dao = new Student_DAO(Input_Student_Information_Screen.this);
         student_dao.open();
+
+        studentList = student_dao.getAllStudent();
     }
 
     public void AddStudent(View view) {
@@ -67,16 +70,30 @@ public class Input_Student_Information_Screen extends AppCompatActivity {
             student.setStudent_Class(editText4.getText().toString());
             student.setStudent_Address(editText5.getText().toString());
 
-            studentList.add(student);
-            boolean check = student_dao.addStudent(student);
-            if(check){
-                Toast.makeText(Input_Student_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
+            if(student != null){
+                student_dao.addStudent(student);
+
+                studentList.clear();
+                studentList.addAll(student_dao.getAllStudent());
+
+                Toast.makeText(Input_Student_Information_Screen.this, "Theem thành công", Toast.LENGTH_LONG).show();
             }
-            student_dao.close();
+
+
         }
     }
 
     public void ShowAllStudent(View view) {
+
+        studentList = (ArrayList<Student>) student_dao.getAllStudent();
+
+        if(studentList.isEmpty()){
+            Intent intent = new Intent(Input_Student_Information_Screen.this, Empty_Student_List.class);
+            startActivity(intent);
+        }else{
+            Intent intent = new Intent(Input_Student_Information_Screen.this, All_Student_Informaiton.class);
+            startActivity(intent);
+        }
 
     }
 

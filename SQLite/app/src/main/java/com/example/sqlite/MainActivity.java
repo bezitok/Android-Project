@@ -48,10 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buttonThem:
+
                 Staff staff = new Staff();
                 String tenNhanVien = editText.getText().toString();
                 staff.setStaff_Name(tenNhanVien);
                 staffList.add(staff);
+
                 boolean check = nhanVien_dao.addStaff(staff);
                 if(check){
                     Toast.makeText(this, "Thêm thành công", Toast.LENGTH_SHORT).show();
