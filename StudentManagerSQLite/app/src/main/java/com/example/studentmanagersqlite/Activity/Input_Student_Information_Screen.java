@@ -39,12 +39,9 @@ public class Input_Student_Information_Screen extends AppCompatActivity {
         editText4 = findViewById(R.id.input_student_editText4);
         editText5 = findViewById(R.id.input_student_editText5);
 
-
-
         student_dao = new Student_DAO(Input_Student_Information_Screen.this);
         student_dao.open();
 
-        studentList = student_dao.getAllStudent();
     }
 
     public void AddStudent(View view) {
@@ -76,7 +73,7 @@ public class Input_Student_Information_Screen extends AppCompatActivity {
                 studentList.clear();
                 studentList.addAll(student_dao.getAllStudent());
 
-                Toast.makeText(Input_Student_Information_Screen.this, "Theem thành công", Toast.LENGTH_LONG).show();
+                Toast.makeText(Input_Student_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
             }
 
 

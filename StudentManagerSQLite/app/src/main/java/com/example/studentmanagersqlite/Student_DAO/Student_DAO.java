@@ -41,8 +41,6 @@ public class Student_DAO {
 
         long id  = sqLiteDatabase.insert(Student_Database.Table_Name, null, contentValues);
 
-        sqLiteDatabase.close();
-
         if(id != 0){
             return true;
         }else {
@@ -95,6 +93,7 @@ public class Student_DAO {
     }
 
     public int EditStudent(Student student) {
+
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(Student_Database.student_Name, student.getStudent_Name());

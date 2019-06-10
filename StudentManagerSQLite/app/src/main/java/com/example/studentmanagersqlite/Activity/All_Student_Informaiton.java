@@ -22,6 +22,7 @@ public class All_Student_Informaiton extends AppCompatActivity {
     ArrayList<Student> studentList;
     ListView listView;
     Student_DAO student_dao;
+    Custom_Adapter custom_adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class All_Student_Informaiton extends AppCompatActivity {
 
         studentList = (ArrayList<Student>) student_dao.getAllStudent();
 
-        Custom_Adapter custom_adapter = new Custom_Adapter(All_Student_Informaiton.this, R.layout.one_student_information, studentList);
+        custom_adapter = new Custom_Adapter(All_Student_Informaiton.this, R.layout.one_student_information, studentList);
         custom_adapter.notifyDataSetChanged();
         listView.setAdapter(custom_adapter);
 
@@ -66,14 +67,6 @@ public class All_Student_Informaiton extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.context_menu_detail:
-
-                Student student = studentList.get(positionSelected);
-
-                Intent intent1 = new Intent(All_Student_Informaiton.this, One_Student_Information.class);
-                Bundle bundle1 = new Bundle();
-                bundle1.putParcelable("student Selected",student);
-                intent1.putExtras(bundle1);
-                startActivity(intent1);
 
                 break;
             case R.id.context_menu_edit:

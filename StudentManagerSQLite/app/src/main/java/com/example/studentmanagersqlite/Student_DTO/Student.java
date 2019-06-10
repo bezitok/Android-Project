@@ -3,7 +3,7 @@ package com.example.studentmanagersqlite.Student_DTO;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Student implements Parcelable {
+public class Student {
     int student_ID;
     String student_Name;
     String student_Code;
@@ -79,39 +79,4 @@ public class Student implements Parcelable {
         this.student_Address = student_Address;
     }
 
-    protected Student(Parcel in) {
-        student_ID = in.readInt();
-        student_Name = in.readString();
-        student_Code = in.readString();
-        student_DOB = in.readString();
-        student_Class = in.readString();
-        student_Address = in.readString();
-    }
-
-    public static final Creator<Student> CREATOR = new Creator<Student>() {
-        @Override
-        public Student createFromParcel(Parcel in) {
-            return new Student(in);
-        }
-
-        @Override
-        public Student[] newArray(int size) {
-            return new Student[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(student_ID);
-        dest.writeString(student_Name);
-        dest.writeString(student_Code);
-        dest.writeString(student_DOB);
-        dest.writeString(student_Class);
-        dest.writeString(student_Address);
-    }
 }
