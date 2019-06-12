@@ -29,7 +29,7 @@ public class Student_DAO {
         student_database.close();
     }
 
-    public boolean addStudent(Student student) {
+    public void addStudent(Student student) {
 
         ContentValues contentValues = new ContentValues();
 
@@ -39,13 +39,8 @@ public class Student_DAO {
         contentValues.put(Student_Database.Table_Name, student.getStudent_Class());
         contentValues.put(Student_Database.Table_Name, student.getStudent_Address());
 
-        long id  = sqLiteDatabase.insert(Student_Database.Table_Name, null, contentValues);
+        sqLiteDatabase.insert(Student_Database.Table_Name, null, contentValues);
 
-        if(id != 0){
-            return true;
-        }else {
-            return false;
-        }
     }
 
     public Student getStudent(int studentID) {

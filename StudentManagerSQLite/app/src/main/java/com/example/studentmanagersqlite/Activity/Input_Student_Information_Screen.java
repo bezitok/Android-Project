@@ -19,14 +19,13 @@ import com.example.studentmanagersqlite.Student_DTO.Student;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class Input_Student_Information_Screen extends AppCompatActivity {
 
     EditText editText1, editText2, editText3, editText4, editText5;
     Student_DAO student_dao;
     DatePickerDialog datePickerDialog;
-    List<Student> studentList = new ArrayList<>();
+    ArrayList<Student> studentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,36 +58,38 @@ public class Input_Student_Information_Screen extends AppCompatActivity {
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
         }else {
-            Student student = new Student();
+//            Student student = new Student();
+//
+//            student.setStudent_Name(editText1.getText().toString());
+//            student.setStudent_Code(editText2.getText().toString());
+//            student.setStudent_DOB(editText3.getText().toString());
+//            student.setStudent_Class(editText4.getText().toString());
+//            student.setStudent_Address(editText5.getText().toString());
 
-            student.setStudent_Name(editText1.getText().toString());
-            student.setStudent_Code(editText2.getText().toString());
-            student.setStudent_DOB(editText3.getText().toString());
-            student.setStudent_Class(editText4.getText().toString());
-            student.setStudent_Address(editText5.getText().toString());
+            Student student = createStudent();
 
             if(student != null){
                 student_dao.addStudent(student);
-
-                studentList.clear();
-                studentList.addAll(student_dao.getAllStudent());
-
-                Toast.makeText(Input_Student_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
             }
 
+            studentList.add(student);
 
+
+
+            Toast.makeText(Input_Student_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
         }
     }
 
     public void ShowAllStudent(View view) {
-
-        studentList = (ArrayList<Student>) student_dao.getAllStudent();
 
         if(studentList.isEmpty()){
             Intent intent = new Intent(Input_Student_Information_Screen.this, Empty_Student_List.class);
             startActivity(intent);
         }else{
             Intent intent = new Intent(Input_Student_Information_Screen.this, All_Student_Informaiton.class);
+            Bundle bundle = new Bundle();
+            bundle.putParcelableArrayList("studentList", studentList);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
 
@@ -141,5 +142,16 @@ public class Input_Student_Information_Screen extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
     }
+
+    public Student createStudent(){
+        String student_Name = editText1.getText().toString();
+        String student_Code = editText2.getText().toString();
+        String student_DOB = editText3.getText().toString();
+        String student_Class = editText4.getText().toString();
+        String student_Address = editText5.getText().toString();
+        Student student = new Student(student_Name, student_Code, student_DOB, student_Class, student_Address);
+        return student;
+    };
 }

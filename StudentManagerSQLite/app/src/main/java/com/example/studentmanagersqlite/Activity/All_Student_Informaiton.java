@@ -31,9 +31,11 @@ public class All_Student_Informaiton extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
-        studentList = (ArrayList<Student>) student_dao.getAllStudent();
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        studentList = bundle.getParcelableArrayList("studentList");
 
-        custom_adapter = new Custom_Adapter(All_Student_Informaiton.this, R.layout.one_student_information, studentList);
+        custom_adapter = new Custom_Adapter(All_Student_Informaiton.this, R.layout.listview_one_student, studentList);
         custom_adapter.notifyDataSetChanged();
         listView.setAdapter(custom_adapter);
 

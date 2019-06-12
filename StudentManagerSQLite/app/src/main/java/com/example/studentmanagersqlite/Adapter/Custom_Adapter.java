@@ -33,15 +33,15 @@ public class Custom_Adapter extends ArrayAdapter {
 
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.one_student_information, null);
+            convertView = inflater.inflate(R.layout.listview_one_student, null);
 
             viewHolder = new ViewHolder();
-            viewHolder.student_Image = convertView.findViewById(R.id.one_student_information_imageView);
-            viewHolder.student_Name = convertView.findViewById(R.id.one_student_information_textView1);
-            viewHolder.student_Code = convertView.findViewById(R.id.one_student_information_textView2);
-            viewHolder.student_DOB = convertView.findViewById(R.id.one_student_information_textView3);
-            viewHolder.student_Class = convertView.findViewById(R.id.one_student_information_textView4);
-            viewHolder.student_Address = convertView.findViewById(R.id.one_student_information_textView5);
+            viewHolder.student_Image = convertView.findViewById(R.id.student_image);
+            viewHolder.student_Name = convertView.findViewById(R.id.text_Student_Name);
+            viewHolder.student_Code = convertView.findViewById(R.id.text_Student_Code);
+            viewHolder.student_DOB = convertView.findViewById(R.id.text_Student_DOB);
+            viewHolder.student_Class = convertView.findViewById(R.id.text_Student_Class);
+            viewHolder.student_Address = convertView.findViewById(R.id.text_Student_Address);
 
             convertView.setTag(viewHolder);
         }else{
