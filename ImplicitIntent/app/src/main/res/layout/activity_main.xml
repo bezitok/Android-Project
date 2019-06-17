@@ -21,4 +21,22 @@
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:onClick="Call"/>
+
+    <Button
+        android:id="@+id/buttonSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:onClick="SMS"/>
+
+    <Button
+        android:id="@+id/buttonTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:onClick="TEL"/>
 </LinearLayout>

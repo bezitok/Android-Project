@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="70dp"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/staff_Image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/baseline_account_circle_black_36"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@id/staff_Image"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/staff_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="abc"/>
+        <TextView
+            android:id="@+id/staff_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="abc"/>
+        <TextView
+            android:id="@+id/staff_Age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="abc"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background_1"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_screen_textView1"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:fontFamily="@font/baloo"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/input_screen_editText_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText1"
+            android:fontFamily="@font/baloo"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/input_screen_editText_Code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText2"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/input_screen_editText_DOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText3"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:focusable="false"
+            android:onClick="Get_Student_DOB"
+            />
+
+        <EditText
+            android:id="@+id/input_screen_editText_Class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText4"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/input_screen_editText_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText5"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/input_screen_button_Confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="@string/input_screen_button1"
+            android:backgroundTint="#0089D2"
+            android:textColor="#FFF"
+            android:layout_marginRight="20dp"
+            android:onClick="Confirm"
+            />
+
+        <Button
+            android:id="@+id/input_screen_button_Show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="@string/input_screen_button2"
+            android:backgroundTint="#0089D2"
+            android:textColor="#FFF"
+            android:layout_marginLeft="20dp"
+            android:onClick="ShowAll"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/input_screen_textView_Exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/input_screen_textView2"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:fontFamily="@font/baloo"
+        android:textSize="20dp"
+        android:onClick="Exit"/>
+</LinearLayout>

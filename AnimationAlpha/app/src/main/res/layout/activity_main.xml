@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/vidic"
+        android:layout_width="200dp"
+        android:layout_height="108dp"
+        android:src="@drawable/vidic" />
+
+    <ImageView
+        android:id="@+id/rio"
+        android:layout_width="130dp"
+        android:layout_height="114dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/rio" />
+
+    <ImageView
+        android:id="@+id/nedved"
+        android:layout_width="130dp"
+        android:layout_height="114dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/nedved"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/nedved1"
+        android:layout_width="130dp"
+        android:layout_height="114dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/nedved"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/beckham"
+        android:layout_width="130dp"
+        android:layout_height="114dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/beckham"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
