@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -32,6 +33,7 @@ public class Input_Information_Screen extends AppCompatActivity {
     Student_DAO student_dao;
     DatePickerDialog datePickerDialog;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,23 +50,47 @@ public class Input_Information_Screen extends AppCompatActivity {
         textView_Exit = findViewById(R.id.input_screen_textView_Exit);
 
         student_dao = new Student_DAO(Input_Information_Screen.this);
+
     }
 
     public void Confirm(View view){
-        Student_DTO student = new Student_DTO();
 
-        student.setStudent_Name(editText_Name.getText().toString());
-        student.setStudent_Code(editText_Code.getText().toString());
-        student.setStudent_DOB(editText_DOB.getText().toString());
-        student.setStudent_Class(editText_Class.getText().toString());
-        student.setStudent_Address(editText_Address.getText().toString());
+        String student_Name = editText_Name.getText().toString();
+        String student_Code = editText_Code.getText().toString();
+        String student_DOB = editText_DOB.getText().toString();
+        String student_Class = editText_Class.getText().toString();
+        String student_Address = editText_Address.getText().toString();
 
-        student_dao.addStudent(student);
+        if(student_Name.isEmpty() || student_Code.isEmpty() || student_DOB.isEmpty() ||
+                student_Class.isEmpty() || student_Address.isEmpty()){
 
-        Toast.makeText(Input_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
+            AlertDialog.Builder builder = new AlertDialog.Builder(Input_Information_Screen.this);
+            builder.setCancelable(false);
+            builder.setTitle("Warning");
+            builder.setMessage("Các trường không được để trống");
+            builder.setNegativeButton("OK", null);
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }else{
+
+            Student_DTO student = new Student_DTO();
+
+            student.setStudent_Name(editText_Name.getText().toString());
+            student.setStudent_Code(editText_Code.getText().toString());
+            student.setStudent_DOB(editText_DOB.getText().toString());
+            student.setStudent_Class(editText_Class.getText().toString());
+            student.setStudent_Address(editText_Address.getText().toString());
+
+            student_dao.addStudent(student);
+
+            Toast.makeText(Input_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void ShowAll(View view) {
+        student_dao = new Student_DAO(Input_Information_Screen.this);
         studentList = student_dao.getALLStudent();
         if(studentList.isEmpty()){
             Intent intent = new Intent(Input_Information_Screen.this, Empty_List_Student.class);

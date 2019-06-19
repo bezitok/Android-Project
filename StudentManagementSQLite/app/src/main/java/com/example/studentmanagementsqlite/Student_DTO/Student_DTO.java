@@ -1,6 +1,9 @@
 package com.example.studentmanagementsqlite.Student_DTO;
 
-public class Student_DTO {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Student_DTO implements Parcelable {
     int student_ID;
     String student_Name;
     String student_Code;
@@ -27,6 +30,27 @@ public class Student_DTO {
         this.student_Class = student_Class;
         this.student_Address = student_Address;
     }
+
+    protected Student_DTO(Parcel in) {
+        student_ID = in.readInt();
+        student_Name = in.readString();
+        student_Code = in.readString();
+        student_DOB = in.readString();
+        student_Class = in.readString();
+        student_Address = in.readString();
+    }
+
+    public static final Creator<Student_DTO> CREATOR = new Creator<Student_DTO>() {
+        @Override
+        public Student_DTO createFromParcel(Parcel in) {
+            return new Student_DTO(in);
+        }
+
+        @Override
+        public Student_DTO[] newArray(int size) {
+            return new Student_DTO[size];
+        }
+    };
 
     public int getStudent_ID() {
         return student_ID;
@@ -74,5 +98,20 @@ public class Student_DTO {
 
     public void setStudent_Address(String student_Address) {
         this.student_Address = student_Address;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(student_ID);
+        dest.writeString(student_Name);
+        dest.writeString(student_Code);
+        dest.writeString(student_DOB);
+        dest.writeString(student_Class);
+        dest.writeString(student_Address);
     }
 }

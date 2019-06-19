@@ -23,7 +23,7 @@ public class Student_Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sqlite_Query = "Create table " + TB_NAME + " ( " +
-                student_ID + " integer primary key autoincrement, " +
+                student_ID + " integer primary key , " +
                 student_Name + " text, " +
                 student_Code + " text, " +
                 student_DOB + " text, " +

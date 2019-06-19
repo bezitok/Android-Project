@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background_2"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/one_student_info_textView1"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/baseline_account_circle_black_36"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/one_student_infor_Name"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/one_student_infor_Code"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/one_student_infor_DOB"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/one_student_infor_Class"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/one_student_infor_Address"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/one_student_infor_School"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/baloo"
+        android:textColor="#000"/>
+
+</LinearLayout>

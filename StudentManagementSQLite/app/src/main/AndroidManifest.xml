@@ -19,6 +19,8 @@
         <activity android:name=".Activity.Input_Information_Screen" />
         <activity android:name=".Activity.List_Student_Information" />
         <activity android:name=".Activity.Empty_List_Student" />
+        <activity android:name=".Activity.One_Student_Info" />
+        <activity android:name=".Activity.Edit_Student_Screen" />
     </application>
 
 </manifest>

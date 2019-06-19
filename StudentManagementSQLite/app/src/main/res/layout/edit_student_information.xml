@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_5"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/input_screen_textView1"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:fontFamily="@font/baloo"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/edit_screen_editText_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText1"
+            android:fontFamily="@font/baloo"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/edit_screen_editText_Code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText2"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:inputType="number"
+            android:maxLength="12"
+            />
+
+        <EditText
+            android:id="@+id/edit_screen_editText_DOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText3"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:focusable="false"
+            android:onClick="Get_Student_DOB"
+            />
+
+        <EditText
+            android:id="@+id/edit_screen_editText_Class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText4"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/edit_screen_editText_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_screen_editText5"
+            android:fontFamily="@font/baloo"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/edit_screen_Button_Update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="@string/edit_student_information_button1"
+            android:backgroundTint="#897E83"
+            android:textColor="#000"
+            android:layout_marginRight="20dp"
+            android:onClick="Update"
+            />
+
+        <Button
+            android:id="@+id/edit_screen_Button_Cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="@string/edit_student_information_button2"
+            android:backgroundTint="#897E83"
+            android:textColor="#000"
+            android:layout_marginLeft="20dp"
+            android:onClick="Cancel"
+            />
+    </LinearLayout>
+</LinearLayout>

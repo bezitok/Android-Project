@@ -20,34 +20,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"/>
 
         <TextView
             android:id="@+id/student_Code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"/>
 
         <TextView
             android:id="@+id/student_DOB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"/>
 
         <TextView
             android:id="@+id/student_Class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"/>
 
         <TextView
             android:id="@+id/student_Address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=""/>
+            android:text=""
+            android:fontFamily="@font/baloo"
+            android:textColor="#000"/>
     </LinearLayout>
 </RelativeLayout>

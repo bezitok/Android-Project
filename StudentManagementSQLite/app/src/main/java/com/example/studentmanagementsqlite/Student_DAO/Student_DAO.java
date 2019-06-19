@@ -15,6 +15,8 @@ public class Student_DAO {
 
     Student_Database student_database;
     SQLiteDatabase sqLiteDatabase;
+    String[] column_Student_Database = {Student_Database.student_ID, Student_Database.student_Name,
+            Student_Database.student_Code, Student_Database.student_DOB, Student_Database.student_Class, Student_Database.student_Address};
 
     public Student_DAO(Context context){
         student_database = new Student_Database(context);
@@ -35,6 +37,7 @@ public class Student_DAO {
     }
 
     public Student_DTO getStudentByID(int id){
+
         sqLiteDatabase = student_database.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.query(Student_Database.TB_NAME, new String[]
                 { Student_Database.student_ID, Student_Database.student_Name, Student_Database.student_Code, Student_Database.student_DOB, Student_Database.student_Class, Student_Database.student_Address},
@@ -56,33 +59,38 @@ public class Student_DAO {
 
         ArrayList<Student_DTO> listStudent = new ArrayList<>();
 
-        String sqlite_Squery = "Select * from " + Student_Database.TB_NAME;
 
-//        sqLiteDatabase = student_database.getReadableDatabase();
+
         sqLiteDatabase = student_database.getWritableDatabase();
+        sqLiteDatabase = student_database.getReadableDatabase();
 
-        Cursor cursor = sqLiteDatabase.rawQuery(sqlite_Squery, null);
+        String sqlite_Query = "Select * from " + Student_Database.TB_NAME;
 
-        if(cursor.moveToFirst()){
-            do{
-                Student_DTO student = new Student_DTO();
-                student.setStudent_ID(cursor.getInt(0));
-                student.setStudent_Name(cursor.getString(1) + "");
-                student.setStudent_Code(cursor.getString(2));
-                student.setStudent_DOB(cursor.getString(3));
-                student.setStudent_Class(cursor.getString(4));
-                student.setStudent_Address(cursor.getString(5));
+        Cursor cursor = sqLiteDatabase.rawQuery(sqlite_Query, null);
 
-                listStudent.add(student);
-            }while (cursor.moveToNext());
+//        Cursor cursor = sqLiteDatabase.query(Student_Database.TB_NAME, column_Student_Database, null, null, null, null, null);
+
+        cursor.moveToFirst();
+
+        while (!cursor.isAfterLast()){
+
+            Student_DTO student = new Student_DTO();
+
+            student.setStudent_ID(cursor.getInt(0));
+            student.setStudent_Name(cursor.getString(1));
+            student.setStudent_Code(cursor.getString(2));
+            student.setStudent_DOB(cursor.getString(3));
+            student.setStudent_Class(cursor.getString(4));
+            student.setStudent_Address(cursor.getString(5));
+
+            listStudent.add(student);
+            cursor.moveToNext();
         }
 
-        cursor.close();
-        sqLiteDatabase.close();
         return listStudent;
     }
 
-    public int EditStudent(Student_DTO student){
+    public int editStudent(Student_DTO student){
         sqLiteDatabase = student_database.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
@@ -97,11 +105,9 @@ public class Student_DAO {
                 new String[] {String.valueOf(student.getStudent_ID())});
     }
 
-    public void DeleteStudent(Student_DTO student){
+    public int deleteStudent(Student_DTO student){
         sqLiteDatabase = student_database.getWritableDatabase();
-        sqLiteDatabase.delete(Student_Database.TB_NAME, Student_Database.student_ID + " = ? ",
-                new String[] {String.valueOf(student.getStudent_ID())});
-        sqLiteDatabase.close();
+        return sqLiteDatabase.delete(Student_Database.TB_NAME, Student_Database.student_ID + "=?" , new String[] {String.valueOf(student.getStudent_ID())});
     }
 
 }
