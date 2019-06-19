@@ -49,9 +49,13 @@ public class Input_Information_Screen extends AppCompatActivity {
         button_Show = findViewById(R.id.input_screen_button_Show);
         textView_Exit = findViewById(R.id.input_screen_textView_Exit);
 
-        student_dao = new Student_DAO(Input_Information_Screen.this);
+        student_dao = new Student_DAO(Input_Information_Screen.this); //khởi tạo database
 
     }
+
+    /**
+     * Thêm mới 1 sinh viên vào trong database
+     */
 
     public void Confirm(View view){
 
@@ -60,6 +64,8 @@ public class Input_Information_Screen extends AppCompatActivity {
         String student_DOB = editText_DOB.getText().toString();
         String student_Class = editText_Class.getText().toString();
         String student_Address = editText_Address.getText().toString();
+
+        //kiểm tra và cảnh báo người dùng nếu có 1 trường nào đó để trống
 
         if(student_Name.isEmpty() || student_Code.isEmpty() || student_DOB.isEmpty() ||
                 student_Class.isEmpty() || student_Address.isEmpty()){
@@ -74,6 +80,7 @@ public class Input_Information_Screen extends AppCompatActivity {
             alertDialog.show();
         }else{
 
+
             Student_DTO student = new Student_DTO();
 
             student.setStudent_Name(editText_Name.getText().toString());
@@ -82,12 +89,18 @@ public class Input_Information_Screen extends AppCompatActivity {
             student.setStudent_Class(editText_Class.getText().toString());
             student.setStudent_Address(editText_Address.getText().toString());
 
-            student_dao.addStudent(student);
+            student_dao.addStudent(student);  //Thêm 1 record vào trong cơ sở dữ liệu
 
             Toast.makeText(Input_Information_Screen.this, "Thêm thành công", Toast.LENGTH_LONG).show();
         }
 
     }
+
+    /**
+     * Hiển thị toàn bộ danh sách sinh viên
+     * Nếu chưa có sinh viên nào trong database thì trả ra danh sách rỗng
+     * @param view
+     */
 
     public void ShowAll(View view) {
         student_dao = new Student_DAO(Input_Information_Screen.this);
@@ -100,6 +113,11 @@ public class Input_Information_Screen extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+    /**
+     * Hộp thoại thoát ứng dụng
+     * @param view
+     */
 
     public void Exit(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(Input_Information_Screen.this);
@@ -130,6 +148,11 @@ public class Input_Information_Screen extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+    /**
+     * Lấy ngày sinh của sinh viên sử dụng DatePickerDialog
+     * @param view
+     */
 
     public void Get_Student_DOB(View view) {
         Calendar calendar = Calendar.getInstance();

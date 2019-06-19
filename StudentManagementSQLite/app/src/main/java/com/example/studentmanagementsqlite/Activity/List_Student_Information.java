@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +31,8 @@ public class List_Student_Information extends AppCompatActivity {
     Student_DTO student1;
 
     int REQUEST_CODE = 1;
+    public static final String studentDetail = "student";
+    public static final String key_To_Put = "studentSelected";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +41,17 @@ public class List_Student_Information extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
-        student_dao = new Student_DAO(List_Student_Information.this);
+        student_dao = new Student_DAO(List_Student_Information.this); //khởi tạo Database
 
-        studentList = student_dao.getALLStudent();
+        studentList = student_dao.getALLStudent(); //lấy toàn bộ danh sách sinh viên từ database đổ vào listView
 
         setAdapter();
 
-        registerForContextMenu(listView);
+        registerForContextMenu(listView); //khởi tạo contextMenu
+
+        /**
+         *Nhấn vào từng item trong contextMenu thì chuyển qua màn hình chi tiết sinh viên
+         */
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -53,7 +60,7 @@ public class List_Student_Information extends AppCompatActivity {
                 Intent intent = new Intent(List_Student_Information.this, One_Student_Info.class);
                 Bundle bundle = new Bundle();
                 Student_DTO student = studentList.get(position);
-                bundle.putParcelable("student", student);
+                bundle.putParcelable(studentDetail, student);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -73,6 +80,7 @@ public class List_Student_Information extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         final int pos = menuInfo.position;
 
+
         switch (item.getItemId()) {
             case R.id.context_menu_detail:
 
@@ -81,18 +89,16 @@ public class List_Student_Information extends AppCompatActivity {
                 Intent intent = new Intent(List_Student_Information.this, One_Student_Info.class);
                 Bundle bundle = new Bundle();
                 Student_DTO student = studentList.get(menuInfo.position);
-                bundle.putParcelable("student", student);
+                bundle.putParcelable(studentDetail, student); //gửi dữ liệu sang activity Student_Detail
                 intent.putExtras(bundle);
                 startActivity(intent);
                 break;
             case R.id.context_menu_edit:
 
-                Student_DTO studentSelected = studentList.get(pos);
+                Student_DTO studentSelected = studentList.get(pos); //Lấy vị trí của item đang được nhấn
 
                 Intent intent1 = new Intent(List_Student_Information.this, Edit_Student_Screen.class);
-                Bundle bundle1 = new Bundle();
-                bundle1.putParcelable("studentEdit", studentSelected);
-                intent1.putExtras(bundle1);
+                intent1.putExtra(key_To_Put, studentSelected); //gửi dữ liệu sang activity Edit_Student
                 startActivityForResult(intent1, REQUEST_CODE);
 
                 break;
@@ -108,11 +114,11 @@ public class List_Student_Information extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         student1 = studentList.get(pos);
-                        int kq = student_dao.deleteStudent(student1);
-                        if(kq>0){
+                        int kq = student_dao.deleteStudent(student1); //Xóa 1 record khỏi database
+                        if (kq > 0) {
                             Toast.makeText(List_Student_Information.this, "Xóa thành công", Toast.LENGTH_LONG).show();
-                            updateListStudent();
-                        }else{
+                            updateListStudent(); //Cập nhật lại listView
+                        } else {
                             Toast.makeText(List_Student_Information.this, "Xóa không thành công", Toast.LENGTH_LONG).show();
                         }
                     }
@@ -126,29 +132,59 @@ public class List_Student_Information extends AppCompatActivity {
         return super.onContextItemSelected(item);
     }
 
+    /**
+     * Hàm nhận dữ liệu trả về từ activity chỉnh sửa thông tin sinh viên
+     *
+     * @param requestCode: Code yêu cầu khi gửi dữ liệu từ activity List_Student_Information sang activity Edit_Student
+     * @param resultCode: code kết quả nhận về từ activity Edit_Student
+     * @param data: dữ liệu nhận về từ activity Edit_Student
+     *
+     */
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+
+            Student_DTO student = data.getParcelableExtra(Edit_Student_Screen.RESULT); //nhận dữ liệu sinh viên đã chỉnh sửa được trả về từ activity Edit_Student
+
+            student_dao.updateStudent(student); //Cập nhật lại database đã chỉnh sửa
+
+            updateListStudent(); //Cập nhật lại listView
+        }
     }
 
-    public void updateListStudent(){
+    /**
+     * Hàm cập nhật danh sách sinh viên mỗi khi có sự thay đổi về dữ liệu trong database
+     */
+
+    public void updateListStudent() {
         studentList.clear();
         studentList.addAll(student_dao.getALLStudent());
-        if(custom_adapter!=null){
+        if (custom_adapter != null) {
             custom_adapter.notifyDataSetChanged();
         }
-        if(studentList.isEmpty()){
+        if (studentList.isEmpty()) {
             Intent intent = new Intent(List_Student_Information.this, Empty_List_Student.class);
             startActivity(intent);
+            finish();
         }
     }
 
-    public void setAdapter(){
-        if(custom_adapter == null){
+    /**
+     * Hàm set adapter để đổ dữ liệu lên listView
+     */
+
+    public void setAdapter() {
+        if (custom_adapter == null) {
             custom_adapter = new Custom_Adapter(List_Student_Information.this, R.layout.one_student_listview, studentList);
             listView.setAdapter(custom_adapter);
-        }else{
+        } else {
             custom_adapter.notifyDataSetChanged();
         }
     }
+
 }

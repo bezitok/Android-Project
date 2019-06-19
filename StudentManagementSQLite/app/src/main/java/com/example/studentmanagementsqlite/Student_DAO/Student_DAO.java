@@ -18,9 +18,21 @@ public class Student_DAO {
     String[] column_Student_Database = {Student_Database.student_ID, Student_Database.student_Name,
             Student_Database.student_Code, Student_Database.student_DOB, Student_Database.student_Class, Student_Database.student_Address};
 
+    /**
+     *
+     * Khởi tạo database
+     *
+     * @param context
+     */
+
     public Student_DAO(Context context){
         student_database = new Student_Database(context);
     }
+
+    /**
+     * Thêm 1 record vào database
+     * @param student
+     */
 
     public void addStudent(Student_DTO student){
         sqLiteDatabase = student_database.getWritableDatabase();
@@ -55,18 +67,24 @@ public class Student_DAO {
         return student;
     }
 
+    /**
+     * Hàm lấy ra toàn bộ danh sách sinh viên có trong database
+     * Sử dụng cursor để duyệt từ đầu đến cuối danh sách
+     * Mỗi khi duyệt đến một phần từ thì thêm phần tử đó vào 1 danh sách Student
+     *
+     * @return: kết quả trả ra là danh sách sinh viên sau khi đã duyệt đến phần tử cuối của database
+     */
+
     public ArrayList<Student_DTO> getALLStudent(){
 
         ArrayList<Student_DTO> listStudent = new ArrayList<>();
 
-
-
-        sqLiteDatabase = student_database.getWritableDatabase();
+        sqLiteDatabase = student_database.getWritableDatabase(); //Cấp quyền đọc/ghi database
         sqLiteDatabase = student_database.getReadableDatabase();
 
-        String sqlite_Query = "Select * from " + Student_Database.TB_NAME;
+        String sqlite_Query = "Select * from " + Student_Database.TB_NAME; //Câu truy vấn SQLite
 
-        Cursor cursor = sqLiteDatabase.rawQuery(sqlite_Query, null);
+        Cursor cursor = sqLiteDatabase.rawQuery(sqlite_Query, null); //Thực thi câu truy vấn SQLite
 
 //        Cursor cursor = sqLiteDatabase.query(Student_Database.TB_NAME, column_Student_Database, null, null, null, null, null);
 
@@ -83,15 +101,16 @@ public class Student_DAO {
             student.setStudent_Class(cursor.getString(4));
             student.setStudent_Address(cursor.getString(5));
 
-            listStudent.add(student);
-            cursor.moveToNext();
+            listStudent.add(student); //Thêm 1 phần tử vào trong list sau khi duyệt xong 1 phần từ
+            cursor.moveToNext(); //di chuyển con trỏ sang phần tử tiếp theo trong database
         }
 
-        return listStudent;
+        return listStudent; //trả ra list Student sau khi duyệt
     }
 
-    public int editStudent(Student_DTO student){
+    public void updateStudent(Student_DTO student){
         sqLiteDatabase = student_database.getWritableDatabase();
+        sqLiteDatabase = student_database.getReadableDatabase();
 
         ContentValues contentValues = new ContentValues();
 
@@ -101,13 +120,14 @@ public class Student_DAO {
         contentValues.put(Student_Database.student_Class, student.getStudent_Class());
         contentValues.put(Student_Database.student_Address, student.getStudent_Address());
 
-        return sqLiteDatabase.update(Student_Database.TB_NAME, contentValues, Student_Database.student_ID + " = ? ",
-                new String[] {String.valueOf(student.getStudent_ID())});
+        sqLiteDatabase.update(Student_Database.TB_NAME, contentValues, Student_Database.student_ID
+                + "=" + student.getStudent_ID(), null); //Xử lý cập nhật, chỉnh sửa thông tin sinh viên dựa vào id của sinh viên đó
     }
 
     public int deleteStudent(Student_DTO student){
         sqLiteDatabase = student_database.getWritableDatabase();
-        return sqLiteDatabase.delete(Student_Database.TB_NAME, Student_Database.student_ID + "=?" , new String[] {String.valueOf(student.getStudent_ID())});
+        return sqLiteDatabase.delete(Student_Database.TB_NAME, Student_Database.student_ID
+                + "=?" , new String[] {String.valueOf(student.getStudent_ID())}); //Xóa 1 record khỏi database
     }
 
 }

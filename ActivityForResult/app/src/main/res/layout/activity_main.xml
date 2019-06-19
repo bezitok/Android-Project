@@ -5,27 +5,34 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <EditText
-        android:id="@+id/text1"
+        android:id="@+id/editText1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:inputType="number"
+        />
 
     <EditText
-        android:id="@+id/text2"
+        android:id="@+id/editText2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:inputType="number"
+        />
 
     <Button
-        android:id="@+id/btn_send"
+        android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Send"/>
+        android:text="Multi"/>
 
     <TextView
-        android:id="@+id/text3"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="30dp"
         android:text=""/>
 </LinearLayout>

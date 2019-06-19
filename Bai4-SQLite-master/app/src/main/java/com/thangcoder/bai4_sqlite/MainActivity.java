@@ -2,6 +2,7 @@ package com.thangcoder.bai4_sqlite;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -71,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
                 student.setmAddress(editAddress.getText()+"");
                 student.setmEmail(edtEmail.getText()+"");
                 student.setmPhoneNumber(edtPhoneNumber.getText()+"");
+
+                Log.e("ID: ", "" + student.getmID());
+
                 int result = dbManager.updateStudent(student);
                 if(result>0){
                     updateListStudent();

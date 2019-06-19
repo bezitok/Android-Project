@@ -29,7 +29,7 @@ public class One_Student_Info extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        student = bundle.getParcelable("student");
+        student = bundle.getParcelable(List_Student_Information.studentDetail);
 
 
         textView1.setText("Họ tên: " + student.getStudent_Name());
