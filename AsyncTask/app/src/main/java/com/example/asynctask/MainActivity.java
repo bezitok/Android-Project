@@ -1,11 +1,13 @@
 package com.example.asynctask;
 
 import android.os.AsyncTask;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,55 +25,47 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new CongViec().execute();
+                new DemoAsyncTask().execute(10);
             }
         });
+
+
     }
 
-    private class CongViec extends AsyncTask<Void, String, String>{
-
-        //Hàm chuẩn bị
+    private class DemoAsyncTask extends AsyncTask<Integer, Integer, String>{
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            textView.setText("Bắt đầu." + "\n");
+            Toast.makeText(MainActivity.this, "AsyncTask đang chạy", Toast.LENGTH_LONG).show();
         }
 
-
-        //Hàm xử lý chính, bắt buộc phải có
         @Override
-        protected String doInBackground(Void... voids) {
-
-            for(int i=0; i<5; i++){
-
-                try {
-                    Thread.sleep(2000);
-                    publishProgress("Đếm: " + i + "\n");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+        protected String doInBackground(Integer... integers) {
+            int inputNumber = integers[0];
+            for(int i=0; i<inputNumber; i++){
+                publishProgress(i+1);
+                SystemClock.sleep(1000);
             }
 
-            return "Đã xong.\n";
+            String result = "Đã xong";
+
+            return result;
         }
 
-
-        //Hàm cập nhật tiến độ của công việc
         @Override
-        protected void onProgressUpdate(String... values) {
+        protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
 
-            textView.append(values[0]);
+            int i = values[0];
+            textView.setText("Đếm: " + i);
         }
 
-
-        //Hàm trả ra kết quả của công việc
         @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            textView.append(s);
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            textView.setText(result);
         }
     }
 }
