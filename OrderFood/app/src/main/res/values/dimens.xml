@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="sizeEditText">10dp</dimen>
-    <dimen name="textSize">40sp</dimen>
-    <dimen name="marginBottomLoadingScreen">200dp</dimen>
-    <dimen name="sizeTextView">20sp</dimen>
-</resources>
