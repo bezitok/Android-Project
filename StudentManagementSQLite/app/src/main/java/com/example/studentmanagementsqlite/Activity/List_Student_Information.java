@@ -21,6 +21,8 @@ import com.example.studentmanagementsqlite.Student_DTO.Student_DTO;
 
 import java.util.ArrayList;
 
+
+
 public class List_Student_Information extends AppCompatActivity {
 
     ListView listView;

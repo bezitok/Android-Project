@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="190dp"
+    android:background="@drawable/backgroundmeterial">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/images"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/images"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="24dp"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/images"
+        android:text="Nguyễn Ngọc Hải"
+        android:layout_alignStart="@+id/images"
+        android:layout_alignLeft="@+id/images"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFF"
+        />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:text="Nguyenhaikiller@gmail.com"
+        android:layout_alignStart="@+id/name"
+        android:layout_alignLeft="@+id/name"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+        />
+</RelativeLayout>

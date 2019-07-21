@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Order Food</string>
+    <string name="main_activity_Login">Login</string>
+    <string name="main_activity_txt_User">User Name</string>
+    <string name="main_activity_txt_Password">Password</string>
+    <string name="main_activity_btn_Login">Login</string>
+    <string name="main_activity_notHaveAccount">Not have account?<u> Create now</u></string>
+    <string name="signin_activity_edt_user_Hint">Name</string>
+    <string name="signin_activity_edt_user_Password">Password</string>
+    <string name="signin_activity_edt_user_ConfirmPassword">Comfirm Password</string>
+</resources>
