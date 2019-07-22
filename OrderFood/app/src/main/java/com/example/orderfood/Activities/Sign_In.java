@@ -2,6 +2,7 @@ package com.example.orderfood.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,7 +29,7 @@ public class Sign_In extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signin_layout);
+        setContentView(R.layout.sign_in);
 
         initWidget();
 
@@ -37,7 +38,7 @@ public class Sign_In extends AppCompatActivity {
     }
 
     public void ReturnLogin(View view) {
-        Intent intent = new Intent(Sign_In.this, MainActivity.class);
+        Intent intent = new Intent(Sign_In.this, Log_In.class);
         startActivity(intent);
         finish();
     }
@@ -48,8 +49,37 @@ public class Sign_In extends AppCompatActivity {
         String password = edt_password.getText().toString();
         String confirmPassword = edt_confirmPassword.getText().toString();
 
-        if(userName.isEmpty()){
-            edt_name.setError("Null");
+        if(userName.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
+            AlertDialog.Builder builder = new AlertDialog.Builder(Sign_In.this);
+            builder.setCancelable(false);
+            builder.setTitle("Alert");
+            builder.setMessage("Fields can't be empty. Please try again");
+            builder.setPositiveButton("OK", null);
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
+        }else{
+            if(password.compareTo(confirmPassword) != 0){
+                edt_confirmPassword.setError("Password is incorrect");
+            }else{
+                Account_DTO account = new Account_DTO();
+
+                account.setUser_name(userName);
+                account.setPassword(password);
+                account_dao.createNewAccount(account);
+
+                Toast.makeText(Sign_In.this, "Create account successfully", Toast.LENGTH_LONG).show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(Sign_In.this, Log_In.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                },500);
+            }
         }
 
     }

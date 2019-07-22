@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:animateLayoutChanges="true"
-    tools:context=".Activities.MainActivity"
+    tools:context=".Activities.Log_In"
     android:background="@drawable/gradient_bg"
     >
 

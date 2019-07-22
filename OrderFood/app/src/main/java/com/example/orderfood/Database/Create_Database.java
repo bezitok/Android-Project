@@ -43,36 +43,36 @@ public class Create_Database extends SQLiteOpenHelper {
     public static final String TB_DETAIL_ORDER_AMOUNT = "AMOUNT";
 
     String sqlite_Create_TB_ACCOUNT = "Create table " + TB_ACCOUNT + " ( " +
-                                TB_ACCOUNT_ID + " int primary key, " +
-                                TB_ACCOUNT_USER_NAME + " text, " +
-                                TB_ACCOUNT_PASSWORD + " text " + " ) ";
+            TB_ACCOUNT_ID + " integer primary key, " +
+            TB_ACCOUNT_USER_NAME + " text, " +
+            TB_ACCOUNT_PASSWORD + " text " + " ) ";
 
     String sqlite_Create_TB_FOOD = "Create table " + TB_FOOD + " ( " +
-                                TB_FOOD_ID + " int primary key, " +
-                                TB_FOOD_NAME + " text, " +
-                                TB_FOOD_COST + " text, " +
-                                TB_FOOD_ID_KIND_OF_FOOD + " int " + " ) ";
+            TB_FOOD_ID + " integer primary key, " +
+            TB_FOOD_NAME + " text, " +
+            TB_FOOD_COST + " text, " +
+            TB_FOOD_ID_KIND_OF_FOOD + " integer " + " ) ";
 
     String sqlite_Create_TB_KIND_OF_FOOD = "Create table " + TB_KIND_OF_FOOD + " ( " +
-                                TB_KIND_OF_FOOD_ID + " int primary key, " +
-                                TB_KIND_OF_FOOD_NAME + " text " + " ) ";
+            TB_KIND_OF_FOOD_ID + " integer primary key, " +
+            TB_KIND_OF_FOOD_NAME + " text " + " ) ";
 
     String sqlite_Create_TB_TABLE = "Create table " + TB_TABLE + " ( " +
-                                TB_TABLE_ID + " int primary key, " +
-                                TB_TABLE_NAME + " text, " +
-                                TB_TABLE_STATUS + " text " + " ) ";
+            TB_TABLE_ID + " integer primary key, " +
+            TB_TABLE_NAME + " text, " +
+            TB_TABLE_STATUS + " text " + " ) ";
 
     String sqlite_Create_TB_ORDER = "Create table " + TB_ORDER + " ( " +
-                                TB_ORDER_ID + " int primary key, " +
-                                TB_ORDER_ID_STAFF + " int, " +
-                                TB_ORDER_DATE + " text, " +
-                                TB_ORDER_STATUS + " text, " +
-                                TB_ORDER_ID_TABLE + " int " + " ) ";
+            TB_ORDER_ID + " integer primary key, " +
+            TB_ORDER_ID_STAFF + " integer, " +
+            TB_ORDER_DATE + " text, " +
+            TB_ORDER_STATUS + " text, " +
+            TB_ORDER_ID_TABLE + " integer " + " ) ";
 
     String sqlite_Create_TB_DETAIL_ORDER = "Create table " + TB_DETAIL_ORDER + " ( " +
-            TB_DETAIL_ORDER_ID_ORDER + " int, " +
-            TB_DETAIL_ORDER_ID_FOOD + " int, " +
-            TB_DETAIL_ORDER_AMOUNT + " int, " + "primary key " + " ( " +
+            TB_DETAIL_ORDER_ID_ORDER + " integer, " +
+            TB_DETAIL_ORDER_ID_FOOD + " integer, " +
+            TB_DETAIL_ORDER_AMOUNT + " integer, " + "primary key " + " ( " +
             TB_DETAIL_ORDER_ID_FOOD + ", " +
             TB_DETAIL_ORDER_ID_ORDER + " ) " + " ) ";
 
@@ -94,10 +94,8 @@ public class Create_Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("Drop table if exists " + TB_ACCOUNT);
+        onCreate(db);
     }
 
-    public SQLiteDatabase open(){
-        return this.getWritableDatabase();
-    }
 }
