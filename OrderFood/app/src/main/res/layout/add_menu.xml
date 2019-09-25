@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#90CAF9">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:text="@string/menu_activity_title"
+        android:textAllCaps="true"
+        android:fontFamily="@font/baloo"
+        android:layout_gravity="center"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            >
+
+            <EditText
+                android:id="@+id/add_menu_edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:hint="@string/menu_activity_edt_name"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                />
+
+            <EditText
+                android:id="@+id/add_menu_edt_cost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:layout_marginTop="10dp"
+                android:hint="@string/menu_activity_edt_cost"
+                android:paddingLeft="10dp"
+                android:layout_weight="1"
+                android:inputType="number"/>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                
+                <Spinner
+                    android:id="@+id/add_menu_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    >
+                    
+                </Spinner>
+                
+                <ImageButton
+                    android:id="@+id/add_menu_img_btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@android:drawable/ic_input_add"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#5A5858"
+                    android:onClick="addKindOfFood"/>
+            </LinearLayout>
+            
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/add_menu_img_selectKindOfFood"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/food"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:onClick="select_KindOfFood"/>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/add_menu_btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#01579B"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/add_table_btn_confirm"
+            android:textColor="#FFF"
+            android:onClick="confirmAddMenu"
+            />
+
+        <Button
+            android:id="@+id/add_menu_btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#B71C1C"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/menu_activity_btn_cancel"
+            android:textColor="#FFF"
+            android:onClick="cancelAddMenu"/>
+    </LinearLayout>
+
+</LinearLayout>

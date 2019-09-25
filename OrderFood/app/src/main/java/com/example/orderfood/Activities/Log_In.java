@@ -25,6 +25,7 @@ public class Log_In extends AppCompatActivity {
     EditText edt_UserName;
     EditText edt_Password;
     Button btn_Login;
+    public static final String USERNAME = "username";
 
     Account_DAO account_dao = new Account_DAO(Log_In.this);
 
@@ -67,7 +68,12 @@ public class Log_In extends AppCompatActivity {
             boolean check = account_dao.processLogin(userName, password);
 
             if(check){
+                SystemClock.sleep(700);
                 Toast.makeText(Log_In.this, "Log In Successfully", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Log_In.this, Home.class);
+                intent.putExtra(USERNAME, userName);
+                startActivity(intent);
+                finish();
             }else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(Log_In.this);
                 builder.setCancelable(false);

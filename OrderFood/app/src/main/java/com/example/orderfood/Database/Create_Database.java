@@ -24,6 +24,7 @@ public class Create_Database extends SQLiteOpenHelper {
     public static final String TB_FOOD_NAME = "FOOD_NAME";
     public static final String TB_FOOD_COST = "FOOD_COST";
     public static final String TB_FOOD_ID_KIND_OF_FOOD = "ID_KIND_OF_FOOD";
+    public static final String TB_FOOD_IMAGE = "FOOD_IMAGE";
 
     public static final String TB_KIND_OF_FOOD_ID = "ID_KIND_OF_FOOD";
     public static final String TB_KIND_OF_FOOD_NAME = "KIND_OF_FOOD_NAME";
@@ -51,7 +52,8 @@ public class Create_Database extends SQLiteOpenHelper {
             TB_FOOD_ID + " integer primary key, " +
             TB_FOOD_NAME + " text, " +
             TB_FOOD_COST + " text, " +
-            TB_FOOD_ID_KIND_OF_FOOD + " integer " + " ) ";
+            TB_FOOD_ID_KIND_OF_FOOD + " integer, " +
+            TB_FOOD_IMAGE + " text" + " ) ";
 
     String sqlite_Create_TB_KIND_OF_FOOD = "Create table " + TB_KIND_OF_FOOD + " ( " +
             TB_KIND_OF_FOOD_ID + " integer primary key, " +
@@ -95,6 +97,11 @@ public class Create_Database extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("Drop table if exists " + TB_ACCOUNT);
+        db.execSQL("Drop table if exists " + TB_FOOD);
+        db.execSQL("Drop table if exists " + TB_KIND_OF_FOOD);
+        db.execSQL("Drop table if exists " + TB_TABLE);
+        db.execSQL("Drop table if exists " + TB_ORDER);
+        db.execSQL("Drop table if exists " + TB_DETAIL_ORDER);
         onCreate(db);
     }
 

@@ -22,11 +22,10 @@
             android:id="@+id/greeting_App"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:text="Order Food"
             android:fontFamily="@font/pacificoregular"
+            android:text="Order Food"
             android:textColor="#FFF"
-            android:textSize="40sp"
-            />
+            android:textSize="40sp" />
 
         <RelativeLayout
             android:id="@+id/rellay1"
@@ -144,5 +143,14 @@
         </RelativeLayout>
 
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/authorize"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFF"
+        android:fontFamily="@font/baloo"/>
 
 </RelativeLayout>
